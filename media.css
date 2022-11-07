@@ -1,0 +1,38 @@
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .back > span {
+        top: 31%;
+        left: 70%;
+    }
+    ul li > a {
+        font-size: 1.5em;
+    }
+    .logo > h2 > span {
+        font-size: 1.5rem;
+    }
+    .logo > h2 {
+        font-size: 1.3rem;
+    }
+    .back > .fa-star {
+        width: 20px;
+        height: 20px;
+        border-top-right-radius: 10px;
+    }
+    .back > .fa-times {
+        width: 20px;
+        height: 20px;
+        border-top-right-radius: 10px;
+    }
+    .back > h3 {
+        font-size: 1.7rem;
+    }
+    .back > h2 {
+        font-size: 1.8rem;
+    }
+    .icons i > .like {
+        right: 33%;
+    }
+    .logo {
+        width: 25%;
+        height: 95%;
+    }
+}

@@ -1,0 +1,628 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    user-select: none;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+nav{
+    width: 100%;
+    height: 13vh;
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(90deg,rgb(220, 220, 4), rgb(157, 157, 0));
+    display: flex;
+    box-shadow: 1px 4px 2px rgb(180, 180, 64);
+}
+.logo{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo > img{
+    width: 30%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+.logo > h2{
+    font-family: 'Sofia',  sans-serif;
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.logo > h2 > span{
+    font-family: 'Sofia',  sans-serif;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.logo > h2 > span:hover{
+    font-size: 2.3rem;
+    font-weight: bolder;
+}
+ul{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%
+}
+ul li{
+    width: 18%;
+    height: 60%;
+    border: 6px double #222;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 6px rgb(75, 82, 1),
+                3px 3px 4px rgb(86, 94, 3),
+                2px 2px 3px rgb(75, 82, 1) inset,
+                3px 3px 4px rgb(157, 157, 0) inset;
+    transition: .2s;
+    
+}
+ul li:active{
+    transform: scale(.98);
+    box-shadow: 0 0 0 #000;
+}
+ul li > a{
+    font-family: 'Sofia', sans-serif;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: rgb(26, 29, 1);
+    text-shadow: 2px 2px 1px rgb(75, 82, 1);
+}
+.icons{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7%;
+    font-size: 1.7em;
+    color: rgb(188, 11, 11);
+    position: relative;
+}
+.icons i{
+    cursor: pointer;
+}
+.icons i > .cart{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(188, 11, 11);
+    position: absolute;
+    right: 55%;
+    transform: translateX(65%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    transition: .7s;
+}
+.icons i > .like{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(188, 11, 11);
+    position: absolute;
+    right: 40%;
+    transform: translateX(40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: .5em;
+    transition: .7s;
+}
+.sectionCard{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 23, 23,0.8);
+    transition: .7s;
+    position: absolute;
+    top: 12.5%;
+    z-index: 1;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    padding-top: 11%;
+    gap: 4.3%;
+}
+.cardContect{
+    width: 25.5%;
+    height: 20%;
+    background: linear-gradient(90deg,rgb(250,250,250),rgb(250,250,250),rgb(250,250,250), rgb(200,200,200), grey, rgb(50,50,50));
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(200,200,200),
+                2px 3px 3px rgb(230,230,230),
+                2px 3px 6px #fff;
+}
+.cardContect > span{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.cardContect > img{
+    width: 35%;
+    height: 100%;
+    border-radius: 10%;
+}
+.cardContect > .dolSpan{
+    position: absolute;
+    top: 35%;
+    left: 63%;
+    transform: translateX(-63%);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+.card{
+    width: 25.5%;
+    height: 31%;
+    position: absolute;
+    z-index: 2;
+    top: 34%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: url(img/rocket_loan.webp) center   / cover;
+    transition: .7s;
+    border-radius: 10px;
+    /* border-left: 1px solid #000;
+    border-top: 1px solid #000; */
+    box-shadow: 5px 5px 4px #fff, 2px 2px 1px rgba(240, 230, 230);
+}
+.card > form{
+    width: 100%;
+    height: 75%;
+    margin-top: 5%;
+    padding-left: 3%;
+    /* background-colo: grey; */
+}
+.card> form input{
+    margin-top: 3%;
+    background-color: inherit;
+    text-shadow: 1px 1px 0 #000;
+}
+#idram{
+    position: absolute;
+    top: 1%;
+    left: 6.5%;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#visa{
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+.card > form > #numCard{
+    width: 70%;
+    height: 20%;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-left: 1px solid #000;
+    border-bottom: 1px double #000;
+    border-radius: 5px;
+    padding: 5%;
+    font-size: 1.3rem;
+}
+.card > form > #monthCard{
+    width: 10%;
+    height: 10%;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-left: 1px solid #000;
+    border-bottom: 1px double #000;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 32%;
+    text-shadow: .5px 0px 0px#D26413;
+    color: #D26413;
+}
+.card > form > #dayCard{
+    width: 10%;
+    height: 10%;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-left: 1px solid #000;
+    border-bottom: 1px double #000;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: .5px 0px 0px#D26413;
+    color: #D26413;
+}
+.card > form > #drop{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-shadow: .5px 0px 0px #000;
+}
+.card > form > #passCard{
+    width: 10%;
+    height: 10%;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-left: 1px solid #000;
+    border-bottom: 1px double #000;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 2%;
+    color: #000;
+}
+.card > form > #nameCard{
+    width: 70%;
+    height: 20%;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-left: 1px solid #000;
+    border-bottom: 1px double #000;
+    border-radius: 5px;
+    padding: 5%;
+    font-size: 1.3rem;
+}
+.card > form > #submit{
+    width: 20%;
+    height: 15%;
+    outline: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 3%;
+    background-color: inherit;
+    border-bottom: 2px solid #000;
+    border-left: 1px solid #000;
+    text-shadow: 1px 1px 0 #000;
+}
+.card > form > #submit:active{
+    transform: scale(1.08);
+}
+.card > #logo{
+    margin: 1px;
+    border-top-left-radius: 30%;
+    /* border-radius: 1px; */
+    width: 20px;
+    height: 20px;
+    background: url(img/unnamed.png)center / cover;
+}
+.cardContect  > .buy{
+    width: 35%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10%;
+}
+.cardContect  > .buy .fa-times-circle{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+.cardContect  > .buy > .buyBtn{
+    width: 70%;
+    height: 30%;
+    cursor: pointer;
+    border: 3px double #000;
+    color: #fff;
+    background-color: rgb(77, 74, 74);
+    transition: .4s;
+}
+section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6vh 5% ;
+    padding: 4.4% 7.5%;
+    background: #000;
+    position: relative;
+}
+section > .sectionLike{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 23, 23,0.8);
+    position: absolute;
+    z-index: 1;
+    transition: .7s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6vh 5% ;
+    padding: 4.4% 7.5%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+}
+
+section .sectionLike .forHovertwo{
+    width: 30%;
+    height: 40vh;
+    transition: .3s;
+    border: 1px solid #fff;
+}
+section .forHover{
+    width: 30%;
+    height: 40vh;
+    transition: .3s;
+}
+section .item{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: .4s;
+    perspective: 1000px;
+}
+section  .item > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    position: absolute;
+    backface-visibility: hidden; 
+    transition: .7s;
+    background-color: #fff;
+    border-radius: 10px;
+}
+section .back{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    transform: rotateY(-180deg);
+    transition: .7s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 2%;
+    border-radius: 10px;
+}
+.back > span{
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transform: translateX(-60%);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.back > h3{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.back > h3:nth-child(3){
+    color: red;
+}
+.back > h2{
+    font-size: 2.4rem;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.back > .buy{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 3%;
+    margin-top: 10%;
+}
+.back .buy > .fa{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    color: yellow;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+}
+.buy > .fa:active{
+    transform: scale(.87);
+}
+.back > .buy > button{
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    border: 3px double #000;
+    color: #fff;
+    background-color: rgb(77, 74, 74);
+    transition: .4s;
+}
+.buy > button:active{
+    transform: scale(.9);
+}
+.back > .fa-star{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: yellow;
+    cursor: pointer;
+    border-top-right-radius: 11px;
+}
+.back > .fa-times{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: yellow;
+    cursor: pointer;
+    border-top-right-radius: 11px;
+} 
+.back > .fa-times:active{
+    transform: scale(.9);
+}
+.back > .fa-star:active{
+    transform: scale(.9);
+}
+section .forHover:hover img{
+    transform: rotateY(180deg);
+}
+section .forHover:hover .back{
+    transform: rotateY(0deg);
+}
+.contenier{
+    position: absolute;
+    z-index: 7;
+    top: 0%;
+    transform: scale(0);
+    transition: .7s;
+    width: 100%; 
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.87);
+}
+.contenier .ring{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #24ecff;
+    animation: loading 4s linear infinite;
+}
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.contenier .ring::before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #24ecff;
+    box-shadow: 0 0 0 5px #24ecff33,
+         0 0  10px #24ecff22,
+         0 0  20px #24ecff11,
+         0 0  20px #24ecff,
+         0 0  50px #24ecff;
+       
+}
+.contenier .ring:nth-child(2){
+    animation: loading2 4s linear infinite;
+    animation-delay: -1s;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #93ff2d  ;
+}
+@keyframes loading2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.contenier .ring:nth-child(2):before{
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #93ff2d;
+    box-shadow: 0 0 0 5px #93ff2d33,
+         0 0  10px #93ff2d22,
+         0 0  20px #93ff2d11,
+         0 0  20px #93ff2d,
+         0 0  50px #93ff2d;
+       
+}
+.contenier .ring:nth-child(3){
+    animation: loading2 4s linear infinite;
+    animation-delay: -3s;
+    position: absolute;
+    top: 35%;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #e41cf8;
+}
+.contenier .ring:nth-child(3):before{
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #e41cf8;
+    box-shadow: 0 0 0 5px #e41cf833,
+         0 0  10px #e41cf822,
+         0 0  20px #e41cf811,
+         0 0  20px #e41cf8,
+         0 0  50px #e41cf8;
+       
+}
+.contenier p{
+    position: absolute;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: consolas;
+    top: 65%;
+    letter-spacing: 0.15em;
+}
